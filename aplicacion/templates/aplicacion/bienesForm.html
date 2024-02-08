@@ -1,0 +1,24 @@
+{% extends 'aplicacion/home.html' %}
+
+
+{% block titulo %}
+    <h1 class="mb-5">Agregar Unidad</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+    <form action="" method="post">
+        <p>Dominio:<input type="text" name="dominio" id="dominio"></p>
+        <p>Clase:<input type="text" name="clase" id="clase"></p>
+        <p>Anio:<input type="number" name="anio" id="anio"></p>
+        <p>Marca-Modelo:<input type="text" name="marcaModelo" id="marcaModelo"></p>
+        <p>Nro_Chasis:<input type="text" name="nroChasis" id="nroChasis"></p>
+        <p>Nro_Motor:<input type="text" name="nroMotor" id="nroMotor"></p>
+        <p>Aseguradora-Poliza:<input type="text" name="asegPoliza" id="asegPoliza"></p>
+        <input type="submit" value="Cargar">
+    </form>
+{% endblock contenido %}
+
+
+
+
+
