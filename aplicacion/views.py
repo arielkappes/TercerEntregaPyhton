@@ -14,7 +14,7 @@ def rubros(request):
     
 #AREAS
 def areas(request):
-    contexto = {'Areas': Areas.objects.all()}
+    contexto = {'areas': Areas.objects.all()}
     return render (request, "aplicacion/areas.html", contexto)
 
 def personal(request):

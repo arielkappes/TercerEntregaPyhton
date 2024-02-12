@@ -9,22 +9,25 @@
 
 
 {% block contenido %}
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Area</th>
-            <th>Destino</th>
-            <th>Responsable</th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for c in Areas %}
-        <tr>
-            <td>{{% c.area %}}</td>
-            <td>{{% c.destino %}}</td>
-            <td>{{% c.responsable %}}</td>
-        </tr>
+
+    <table class="text-white table .align-items-end">
+        <thead>
+            <tr class=".align-items-end">
+                <th>Id</th>
+                <th>area</th>
+                <th>destino</th>
+                <th>responsable</th>
+            </tr>
+        </thead>
+        <tbody class="text-white">
+    {% for c in areas  %}
+            <tr>
+                <td>{{ c.id }}</td>
+                <td>{{ c.area }}</td>
+                <td>{{ c.destino }}</td>
+                <td>{{ c.responsable }}</td>
+            </tr>
     {% endfor %}
-    </tbody>
-</table>
+        </tbody>
+    </table>
 {% endblock contenido %}

@@ -7,9 +7,12 @@ class Rubros(models.Model):
 
 
 class Areas(models.Model):
-    Area = models.CharField(max_length=50)
-    Destino = models.CharField(max_length=50)
-    Responsable = models.CharField(max_length=50)
+    area = models.CharField(max_length=50)
+    destino = models.CharField(max_length=50)
+    responsable = models.CharField(max_length=50)
+    
+    def __str__(self):
+        return f"{self.area}"
 
 class Personal(models.Model):
     NroLegajo = models.CharField(max_length=50)
