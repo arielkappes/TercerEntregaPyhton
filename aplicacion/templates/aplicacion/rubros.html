@@ -8,5 +8,22 @@
 {% endblock titulo %}
 
 {% block contenido %}
-
+<table class="text-white table .align-items-end">
+    <thead class="text-success">
+        <tr>
+            <th>Id</th>
+            <th>Clase</th>
+            <th>Sub Clase</th>
+        </tr>
+    </thead>
+    <tbody class="text-white">
+{% for c in rubro %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.clase }}</td>
+            <td>{{ c.subClase }}</td>
+        </tr>
+{% endfor %}
+    </tbody>
+</table>
 {% endblock contenido %}
