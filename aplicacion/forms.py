@@ -16,9 +16,8 @@ class AltaRubros(forms.Form):
 
 class AltaPersonal(forms.Form):
     nroLegajo = forms.CharField(max_length=50, required=True)
-    apellido_y_nombre = forms.CharField(max_length=50, required=True)
+    apellido_y_Nombre = forms.CharField(max_length=50, required=True)
     agrupamiento = forms.CharField(max_length=50, required=True)
-    nroChasis = forms.CharField(max_length=50, required=True)
     cargo = forms.CharField(max_length=50, required=True)
     destino = forms.CharField(max_length=100, required=True)
 
