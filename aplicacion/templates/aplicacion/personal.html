@@ -21,14 +21,14 @@
         </tr>
     </thead>
     <tbody class="text-white">
-{% for c in personal  %}
+{% for p in personal  %}
         <tr>
-            <td>{{ c.id }}</td>
-            <td>{{ c.nroLegajo }}</td>
-            <td>{{ c.apellido_y_Nombre }}</td>
-            <td>{{ c.agrupamiento }}</td>
-            <td>{{ c.cargo }}</td>
-            <td>{{ c.destino }}</td>
+            <td>{{ p.id }}</td>
+            <td>{{ p.nroLegajo }}</td>
+            <td>{{ p.apellido_y_Nombre }}</td>
+            <td>{{ p.agrupamiento }}</td>
+            <td>{{ p.cargo }}</td>
+            <td>{{ p.destino }}</td>
         </tr>
 {% endfor %}
     </tbody>

@@ -26,6 +26,6 @@ urlpatterns = [
     #BIENES
     path('bienes/', bienes, name='bienes'),
     #
-    path('alta_bienes/', altaBienes, name= "AltaBienes"),
+    path('alta_bienes/', AltaBienes, name= "AltaBienes"),
     #_________________-------___________________________
 ]

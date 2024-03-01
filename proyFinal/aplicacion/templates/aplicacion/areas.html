@@ -1,0 +1,33 @@
+{% extends 'aplicacion/home.html' %}
+
+
+{% block titulo %}
+<div class="text-center">
+    <h1 class="mx-auto my-0 text-uppercase">BBDD - Areas -</h1>
+    <a class="btn btn-primary" href="#about">empecemos</a>
+{% endblock titulo %}
+
+
+{% block contenido %}
+
+    <table class="text-white table .align-items-end">
+        <thead class="text-success">
+            <tr>
+                <th>Id</th>
+                <th>area</th>
+                <th>destino</th>
+                <th>responsable</th>
+            </tr>
+        </thead>
+        <tbody class="text-white">
+    {% for c in areas  %}
+            <tr>
+                <td>{{ c.id }}</td>
+                <td>{{ c.area }}</td>
+                <td>{{ c.destino }}</td>
+                <td>{{ c.responsable }}</td>
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido %}

@@ -22,16 +22,16 @@
             </tr>
         </thead>
         <tbody class="text-white">
-    {% for c in bienes %}
+    {% for b in bienes %}
         <tr>
-            <td>{{ c.id }}</td>
-            <td>{{ c.dominio }}</td>
-            <td>{{ c.subClase }}</td>
-            <td>{{ c.anio }}</td>
-            <td>{{ c.marcaModelo }}</td>
-            <td>{{ c.nroChasis }}</td>
-            <td>{{ c.nroMotor }}</td>
-            <td>{{ c.aseguradoraPoliza }}</td>
+            <td>{{ b.id }}</td>
+            <td>{{ b.dominio }}</td>
+            <td>{{ b.subClase }}</td>
+            <td>{{ b.anio }}</td>
+            <td>{{ b.marcaModelo }}</td>
+            <td>{{ b.nroChasis }}</td>
+            <td>{{ b.nroMotor }}</td>
+            <td>{{ b.aseguradoraPoliza }}</td>
         </tr>
     {% endfor %}
         </tbody>

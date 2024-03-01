@@ -1,0 +1,37 @@
+{% extends 'aplicacion/home.html' %}
+
+
+{% block titulo %}
+<div class="text-center">
+    <h1 class="mx-auto my-0 text-uppercase">BBDD - Personal -</h1>
+    <a class="btn btn-primary" href="#about">empecemos</a>
+{% endblock titulo %}
+
+{% block contenido %}
+    
+<table class="text-white table .align-items-end">
+    <thead class="text-success">
+        <tr class=".align-items-end">
+            <th>Id</th>
+            <th>Nro Legajo</th>
+            <th>Apellido y Nombre</th>
+            <th>Agrupamiento</th>
+            <th>Cargo</th>
+            <th>Destino</th>
+        </tr>
+    </thead>
+    <tbody class="text-white">
+{% for c in personal  %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.nroLegajo }}</td>
+            <td>{{ c.apellido_y_Nombre }}</td>
+            <td>{{ c.agrupamiento }}</td>
+            <td>{{ c.cargo }}</td>
+            <td>{{ c.destino }}</td>
+        </tr>
+{% endfor %}
+    </tbody>
+</table>
+    
+{% endblock contenido %}
