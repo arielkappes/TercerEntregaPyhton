@@ -3,17 +3,26 @@
 
 {% block titulo %}
 <div class="text-center">
-    <h1 class="mx-auto my-0 text-uppercase">BBDD - Rubros -</h1>
-    <a class="btn btn-primary" href="#about">empecemos</a>
+    <h1 class="mx-auto my-0 text-uppercase">- Rubros -</h1>
+    <a class="btn btn-primary" href="#about">Ver</a>
 {% endblock titulo %}
 
 {% block contenido %}
+<table>
+    <tr>
+        <td with="200"><h2 style="color:#F7DC6F">RUBROS</h2></td>
+        <td>
+            <a href="{% url 'AltaRubros' %}" class="btn btn-success btn-sm m-5"><i class="fa fa-plus fa-lg" title="Alta"></i></a>
+        </td>
+    </tr>
+</table>
 <table class="text-white table .align-items-end">
     <thead class="text-success">
         <tr>
             <th>Id</th>
             <th>Clase</th>
             <th>Sub Clase</th>
+            <th> MB </th>
         </tr>
     </thead>
     <tbody class="text-white">
@@ -22,6 +31,20 @@
             <td>{{ r.id }}</td>
             <td>{{ r.clase }}</td>
             <td>{{ r.subClase }}</td>
+            <td class="d-flex">
+                <a
+                href="{% url 'EditarRubros' r.id %}"
+                class="btn btn-primary"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                ><i class="fa fa-edit fa-sm" title="Editar"></i>
+            </a>
+            <a
+                href="{% url 'EliminarRubro' r.id %}"
+                class="btn btn-danger"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                ><i class="fa fa-trash fa-sm" title="Eliminar"></i>
+            </a>
+            </td>
         </tr>
 {% endfor %}
     </tbody>

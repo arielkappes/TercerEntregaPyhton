@@ -1,0 +1,70 @@
+{% extends 'aplicacion/home.html' %}
+
+
+{% block titulo %}
+<div class="text-center">
+    <h1 class="mx-auto my-0 text-uppercase">- Bienes -</h1>
+    <a class="btn btn-primary" href="#about">Ver</a>
+{% endblock titulo %}
+
+{% block contenido %}
+<table>
+    <tr>
+        <td with="300"><h2 style="color:#F7DC6F" class="fs-1 .text-info">BIENES</h2></td>
+        <td>
+            <a href="{% url 'bienes_create' %}" 
+            class="btn btn-success btn-sm m-5"><i class="fa fa-plus fa-lg" title="Alta"></i></a>
+            <a href="{% url 'descargar_excel' %}" 
+            class="btn btn-primary btn-sm m-5"><i class="fa fa-lg" title="Descargar Tabla"></i>Descargar Tabla</a>
+            
+        </td>
+    </tr>
+</table>
+<table class="text-white table">
+    <thead class="text-success">
+        <tr>
+            <th>Id</th>
+            <th>Dominio</th>
+            <th>Sub-Clase</th>
+            <th>Año</th>
+            <th>Marca Modelo</th>
+            <th>Nro Chasis</th>
+            <th>Nro Motor</th>
+            <th>Accesorios</th>
+            <th>Aseguradora Poliza</th>
+            <th>AMB</th>
+
+        </tr>
+    </thead>
+    <tbody class="text-white">
+{% for b in bienes_list %}
+    <tr>
+        <td>{{ b.id }}</td>
+        <td>{{ b.dominio }}</td>
+        <td>{{ b.subClase }}</td>
+        <td>{{ b.anio }}</td>
+        <td>{{ b.marcaModelo }}</td>
+        <td>{{ b.nroChasis }}</td>
+        <td>{{ b.nroMotor }}</td>
+        <td>{{ b.accesorios }}</td>
+        <td>{{ b.aseguradoraPoliza }}</td>
+        <td class="d-flex">
+            <a
+            href="{% url 'bienes_update' b.id %}"
+            class="btn btn-primary"
+            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+            ><i class="fa fa-edit fa-sm" title="Editar"></i>
+        </a>
+        <a
+            href="{% url 'bienes_delete' b.id %}"
+            class="btn btn-danger"
+            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+            ><i class="fa fa-trash fa-sm" title="Eliminar"></i>
+        </a>
+        </td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+
+{% endblock contenido %}

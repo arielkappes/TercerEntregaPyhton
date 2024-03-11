@@ -3,11 +3,21 @@
 
 {% block titulo %}
 <div class="text-center">
-    <h1 class="mx-auto my-0 text-uppercase">BBDD - Bienes -</h1>
-    <a class="btn btn-primary" href="#about">empecemos</a>
+    <h1 class="mx-auto my-0 text-uppercase">- Bienes -</h1>
+    <a class="btn btn-primary" href="#about">Ver</a>
 {% endblock titulo %}
 
 {% block contenido %}
+<table>
+    <tr>
+        <td with="200"><h2>BIENES</h2></td>
+        <td>
+            <a href="{% url 'AltaBienes' %}" class="btn btn-primary btn-sm"><i class="fa fa-plus fa-lg" title="Alta"></i></a>
+        </td>
+    </tr>
+</table>
+
+
     <table class="text-white table">
         <thead class="text-success">
             <tr>
@@ -19,6 +29,8 @@
                 <th>Nro Chasis</th>
                 <th>Nro Motor</th>
                 <th>Aseguradora Poliza</th>
+                <th>M / B</th>
+
             </tr>
         </thead>
         <tbody class="text-white">
@@ -32,6 +44,20 @@
             <td>{{ b.nroChasis }}</td>
             <td>{{ b.nroMotor }}</td>
             <td>{{ b.aseguradoraPoliza }}</td>
+            <td class="d-flex">
+                <a
+                href="{% url 'EditarBien' b.id %}"
+                class="btn btn-primary"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                ><i class="fa fa-edit fa-sm" title="Editar"></i>
+            </a>
+            <a
+                href="{% url 'EliminarBienes' b.id %}"
+                class="btn btn-danger"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                ><i class="fa fa-trash fa-sm" title="Eliminar"></i>
+            </a>
+            </td>
         </tr>
     {% endfor %}
         </tbody>

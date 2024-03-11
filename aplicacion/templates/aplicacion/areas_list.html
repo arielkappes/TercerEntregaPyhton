@@ -1,0 +1,56 @@
+{% extends 'aplicacion/home.html' %}
+
+
+{% block titulo %}
+<div class="text-center">
+    <h1 class="mx-auto my-0 text-uppercase">- Areas -</h1>
+    <a class="btn btn-primary" href="#about">Ver</a>
+{% endblock titulo %}
+
+
+{% block contenido %}
+<table>
+    <tr>
+        <td with="200"><h2 style="color:#F7DC6F"> AREAS</h2></td>
+        <td>
+            <a href="{% url 'areas_create' %}" 
+            class="btn btn-success btn-sm m-5"><i class="fa fa-plus fa-lg" title="Alta"></i></a>
+        </td>
+    </tr>
+</table>
+<table class="text-white table .align-items-end">
+    <thead class="text-success">
+        <tr>
+            <th>Id</th>
+            <th>area</th>
+            <th>destino</th>
+            <th>responsable</th>
+            <th>MB</th>
+        </tr>
+    </thead>
+    <tbody class="text-white">
+{% for a in areas_list  %}
+        <tr>
+            <td>{{ a.id }}</td>
+            <td>{{ a.area }}</td>
+            <td>{{ a.destino }}</td>
+            <td>{{ a.responsable }}</td>
+            <td class="d-flex">
+                <a
+                href="{% url 'areas_update' a.id %}"
+                class="btn btn-primary"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                ><i class="fa fa-edit fa-sm" title="Editar"></i>
+            </a>
+            <a
+                href="{% url 'areas_delete' a.id %}"
+                class="btn btn-danger"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                ><i class="fa fa-trash fa-sm" title="Eliminar"></i>
+            </a>
+            </td>
+        </tr>
+{% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}
