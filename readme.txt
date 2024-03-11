@@ -6,7 +6,7 @@ Clona este repositorio en tu máquina local:
 
 bash
 Copy code
-git clone https://github.com/arielkappes/TercerEntregaPyhton.git
+git clone https://github.com/arielkappes/kappesAriel-50200.git
 Accede al directorio del proyecto:
 
 
