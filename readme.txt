@@ -6,17 +6,9 @@ Clona este repositorio en tu máquina local:
 
 bash
 Copy code
-git clone https://github.com/tu_usuario/proyecto-admin-bienes.git
+git clone https://github.com/arielkappes/TercerEntregaPyhton.git
 Accede al directorio del proyecto:
 
-bash
-Copy code
-cd proyecto-admin-bienes
-Instala las dependencias utilizando pip:
-
-Copy code
-pip install -r requirements.txt
-Configura el archivo de configuración config.py con los detalles de tu base de datos.
 
 Uso
 Ejecuta el archivo main.py para iniciar la aplicación:
